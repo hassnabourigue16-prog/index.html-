@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice Calculatrice</title>
+</head>
+<body>
+    <h1>Calculatrice console</h1>
+    <p>Ouvrez la console (F12) pour voir les résultats.</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
