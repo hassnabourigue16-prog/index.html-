@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Interactif</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .quiz-container { border: 2px solid #000; padding: 20px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Quiz Interactif</h1>
+        <button onclick="lancerQuiz()">Démarrer le Quiz</button>
+    </div>
+
+    <script>
+        function lancerQuiz() {
+            // 1. Préparer les questions (Tableau de tableaux)
+            const QUESTIONS = [
+                ["Quelle est la capitale de la France ?", "Paris"],
+                ["Combien font 5 + 5 ?", "10"],
+                ["Quelle est la couleur du cheval blanc d'Henri IV ?", "Blanc"]
+            ];
+
+            let score = 0; // Compteur de bonnes réponses
+
+            // 2. Interroger l'utilisateur avec une boucle for
+            for (let i = 0; i < QUESTIONS.length; i++) {
+                let questionPosee = QUESTIONS[i][0]; // La question
+                let reponseCorrecte = QUESTIONS[i][1]; // La réponse attendue
+
+                // Demander la réponse via prompt()
+                let reponseUtilisateur = prompt(questionPosee);
+
+                // 3. Vérification des réponses
+                if (reponseUtilisateur !== null && reponseUtilisateur.toLowerCase() === reponseCorrecte.toLowerCase()) {
+                    alert("Réponse juste");
+                    score++; // Augmenter le compteur
+                } else {
+                    alert("Réponse fausse");
+                }
+            }
+
+            // 4. Résultats de l'évaluation
+            alert("Vous avez répondu correctement à " + score + " questions sur " + QUESTIONS.length);
+        }
+    </script>
+
+</body>
+</html>
